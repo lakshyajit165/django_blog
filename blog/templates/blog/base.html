@@ -7,48 +7,53 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         
+        <!-- Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet"> 
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-        <!-- Bootstrap core CSS -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Material Design Bootstrap -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.1/css/mdb.min.css" rel="stylesheet">
-        
-        <link href="{% static 'blog/main.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet"> 
 
+        
+
+        <link href="{% static 'blog/main.css' %}" rel="stylesheet">
+        
         {% if title %}
         <title>Django Blog - {{ title }}</title>
         {% else %}
         <title>Django Blog</title>    
         {% endif %}    
-    
+       
+          
     </head>
 
-    <body>
-        <header class="site-header">
-            <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <body style="font-family: 'Questrial', sans-serif;">
+        
+            <nav class="navbar navbar-expand-md navbar-dark info-color">
                 <div class="container">
                         <a class="navbar-brand mr-4" href="{% url 'blog-home'%}">Django Blog</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarToggle">
-                          <div class="navbar-nav mr-auto">
-                            <a class="nav-item nav-link" href="{% url 'blog-home'%}">Home</a>
-                            <a class="nav-item nav-link" href="{% url 'blog-about'%}">About</a>
-                          </div>
+                          <ul class="navbar-nav mr-auto">
+                            <li class="nav-item "><a class="nav-link" href="{% url 'blog-home'%}">Home</a></li>
+                            <li class="nav-item "><a class="nav-link" href="{% url 'blog-about'%}">About</a></li>
+                          </ul>
                           <!-- Navbar Right Side -->
-                          <div class="navbar-nav">
-                            <a class="nav-item nav-link" href="#">Login</a>
-                            <a class="nav-item nav-link" href="#">Register</a>
+                          <ul class="navbar-nav">
+                              <li class="nav-item "><a class="nav-link" href="#">Login<i class="fas fa-sign-in-alt ml-2"></i></a></li>
+                              <li class="nav-item "><a class="nav-link" href="#">Register</a></li>
                           </div>
                         </div>
                 </div>
             </nav>
-        </header>
-        <main role="main" class="container">
-            <div class="row">
-                  <div class="col-md-9 mx-auto">
+       
+        <div class="container">
+         
+                  <div class="col-md-10 mx-auto">
                     {% block content %}{% endblock %}
                   </div>
                   <!-- <div class="col-md-4">
@@ -64,16 +69,15 @@
                       </p>
                     </div>
                   </div> -->
-            </div>
-        </main>
+         
+          </div>
     
     <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.1/js/mdb.min.js"></script>    
-    </body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script></body>
 </html>

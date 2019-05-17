@@ -2,17 +2,21 @@
 
 
 {% block content %}
+    <div class="container md-10 mt-4 text-center">
+      <h2>Blog Posts</h2>
+      <hr/>
+    </div>
     {%  for post in posts %}
-        <article class="media content-section">
-            <div class="media-body">
-              <div class="article-metadata">
+        <div class="card m-3">
+            <div class="card-body">
+              <div>
                 <a class="mr-2" href="#">{{ post.author }}</a>
-                <small class="text-muted">{{ post.date_posted }}</small>
+                <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
               </div>
-              <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-              <p class="article-content">{{ post.content }}</p>
+              <h2><a class="card-title" href="#">{{ post.title }}</a></h2>
+              <p class="lead">{{ post.content }}</p>
             </div>
-        </article>
+          </div>
     {% endfor %}
 {% endblock content %}    
     
