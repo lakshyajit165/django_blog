@@ -2,7 +2,18 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h1>{{ user.username }}</h1>
+    <div class="jumbotron row col-lg-8 mx-auto mt-5">
+        <div class="col-lg-4 text-center mb-4">
+            <img class="profile_img" src="{{ user.profile.image.url }}" style="width: 185px; height: 180px; border-radius: 50%">
+        </div>
+        <div class="col-lg-8 text-center">
+            <h2 class="account-heading">{{ user.username }}</h2>
+            <p class="text-secondary">{{ user.email }}</p>
+        </div>
+        
+    <!-- FORM HERE -->
+    </div>
+  
 {% endblock content %}    
     
 
