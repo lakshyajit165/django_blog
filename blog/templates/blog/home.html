@@ -13,7 +13,7 @@
                 <a class="mr-2" href="#">{{ post.author }}</a>
                 <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
               </div>
-              <h2><a class="card-title" href="#">{{ post.title }}</a></h2>
+              <h2><a class="card-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h2>
               <p class="lead">{{ post.content }}</p>
             </div>
           </div>
