@@ -3,7 +3,7 @@
 
 {% block content %}
     <div class="container col-md-10 mt-4 text-center">
-      <h2>Blog Posts</h2>
+      <h2>Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h2>
       <hr/>
     </div>
     {%  for post in posts %}

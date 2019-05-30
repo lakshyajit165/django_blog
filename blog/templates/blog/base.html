@@ -30,9 +30,9 @@
           
     </head>
 
-    <body style="font-family: 'Questrial', sans-serif;">
+    <body style="font-family: 'Questrial', sans-serif;" class="rgba-blue-grey-slight">
         
-            <nav class="navbar navbar-expand-md navbar-dark info-color">
+            <nav class="navbar navbar-expand-md navbar-dark mdb-color darken-4">
                 <div class="container">
                         <a class="navbar-brand mr-4" href="{% url 'blog-home'%}">Django Blog</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,17 +40,18 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarToggle">
                           <ul class="navbar-nav mr-auto">
-                            <li class="nav-item "><a class="nav-link" href="{% url 'blog-home'%}">Home</a></li>
-                            <li class="nav-item "><a class="nav-link" href="{% url 'blog-about'%}">About</a></li>
+                            <li class="nav-item "><a class="nav-link" href="{% url 'blog-home'%}"><i class="fas fa-home"></i>Home</a></li>
+                            <li class="nav-item "><a class="nav-link" href="{% url 'blog-about'%}"><i class="fas fa-info-circle"></i>About</a></li>
                           </ul>
                           <!-- Navbar Right Side -->
                           <ul class="navbar-nav">
                               {% if user.is_authenticated %}
-                                <li class="nav-item "><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
-                                <li class="nav-item "><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                                <li class="nav-item "><a class="nav-link" href="{% url 'post-create' %}"><i class="far fa-plus-square"></i>New Post</a></li>
+                                <li class="nav-item "><a class="nav-link" href="{% url 'profile' %}"><i class="fas fa-user-circle"></i>Profile</a></li>
+                                <li class="nav-item "><a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                               {% else %}
-                                <li class="nav-item "><a class="nav-link" href="{% url 'login' %}">Login<i class="fas fa-sign-in-alt ml-2"></i></a></li>
-                                <li class="nav-item "><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+                                <li class="nav-item "><a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt ml-1"></i>Login</a></li>
+                                <li class="nav-item "><a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user-plus ml-1"></i>Register</a></li>
                               {% endif %}
                           </div>
                         </div>

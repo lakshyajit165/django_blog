@@ -6,12 +6,20 @@
     
         <div class="card col-md-10 mx-auto m-3">
             <div class="card-body">
-              <div>
-                <a class="mr-2" href="#">{{ object.author }}</a>
-                <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
-              </div>
               <h2>{{ object.title }}</h2>
+              <div>
+                <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>
+                <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+                
+              </div>
+              <hr/>
               <p class="lead">{{ object.content }}</p>
+              <div class="row">
+                {% if object.author == user %}
+                    <a href="{% url 'post-update' object.id %}" class="btn btn-dark btn-sm"><i class="fas fa-edit"></i></a>
+                    <a href="{% url 'post-delete' object.id %}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                {% endif%}
+              </div>
             </div>
         </div>
     
