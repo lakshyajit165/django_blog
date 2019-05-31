@@ -1,10 +1,72 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <h2>Landing Page</h2>
-        <a href="{% url 'blog-home' %}">Go to Blog</a>
-    </body> 
-</html>       
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Cover Template · Bootstrap</title>
+
+   
+
+    <!-- Bootstrap core CSS -->
+         <!-- Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet"> 
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">   
+    <!-- Custom styles for this template -->
+    <link href="{% static 'blog/main.css' %}" rel="stylesheet">
+  </head>
+  <body class="text-center elegant-color-dark">
+    
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+                <header class="masthead mb-auto text-center">
+                  <div class="inner">
+                    <h3 class="masthead-brand ">Coders' Blog</h3>
+                    <nav class="nav nav-masthead justify-content-center">
+                      
+                    </nav>
+                  </div>
+                </header>
+              
+                <main role="main" class="inner cover">
+                  <h1 class="cover-heading">Jot down your thoughts!</h1>
+                  <!-- <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p> -->
+                  <p class="lead">Coders' Blog is a simple blogging web app created for coders to jot down their thoughts, ideas, etc that they might come across and also read what others feel or have to share!</p>
+                  
+                  <p class="lead">
+                    <a href="{% url 'blog-home' %}" class="btn btn-lg btn-light teal accent-3">Get Started!</a>
+                  </p>
+                </main>
+              
+                <footer class="mastfoot mt-auto">
+                  <div class="inner">
+                    <p>Follow Author</p>  
+                    <p class="row justify-content-center">
+                        <a href="https://getbootstrap.com/"><i class="fab fa-facebook-square m-2 fa-2x"></i></a>
+                        <a href="https://getbootstrap.com/"><i class="fab fa-github m-2 fa-2x"></i></a>
+                        <a href="https://getbootstrap.com/"><i class="fab fa-linkedin m-2 fa-2x"></i></a>
+                    </p>
+                  </div>
+                </footer>
+              </div>
+              
+  </body>  
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>  
+</body>
+</html>
