@@ -5,7 +5,10 @@
     
     
         <div class="card col-md-10 mx-auto m-3">
+                
             <div class="card-body">
+              <img class="mr-2" src="{{ object.author.profile.image.url }}" style="width: 65px; height: 65px; float: left;">
+            
               <h2>{{ object.title }}</h2>
               <div>
                 <a class="mr-2" href="{% url 'user-posts' object.author.username %}">{{ object.author }}</a>

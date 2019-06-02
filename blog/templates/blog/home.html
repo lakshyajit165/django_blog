@@ -9,6 +9,7 @@
     {%  for post in posts %}
         <div class="card col-md-10 mx-auto m-3">
             <div class="card-body">
+                <img class="mr-2" src="{{ post.author.profile.image.url }}" style="width: 65px; height: 65px; float: left;">
                 <h2><a class="card-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h2>
               <div>
                 <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
@@ -23,8 +24,8 @@
         <div class="btn-group mr-2" role="group" aria-label="First group">
     {% if is_paginated %}
           {% if page_obj.has_previous %}
-            <a class="btn btn-light btn-sm mb-4" href="?page=1">First</a>
-            <a class="btn btn-light btn-sm mb-4" href="?page={{ page_obj.previous_page_number }}">Prev</a>
+            <a class="btn btn-light btn-sm mb-4" href="?page=1"><i class="fas fa-angle-double-left mr-1"></i>First</a>
+            <a class="btn btn-light btn-sm mb-4" href="?page={{ page_obj.previous_page_number }}"><i class="fas fa-angle-left mr-1"></i>Prev</a>
           {% endif %}
         </div>  
         <div class="btn-group mr-2" role="group" aria-label="Second group">
@@ -39,8 +40,8 @@
         </div>  
         <div class="btn-group mr-2" role="group" aria-label="Third group">
           {% if page_obj.has_next %}
-            <a class="btn btn-light btn-sm mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
-            <a class="btn btn-light btn-sm mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            <a class="btn btn-light btn-sm mb-4" href="?page={{ page_obj.next_page_number }}">Next<i class="fas fa-angle-right ml-1"></i></a>
+            <a class="btn btn-light btn-sm mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last<i class="fas fa-angle-double-right ml-1"></i></a>
           {% endif %}
         </div>  
     {% endif %}
