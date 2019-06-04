@@ -7,7 +7,23 @@
       <hr/>
     </div>
     {%  for post in posts %}
-        <div class="card col-md-10 mx-auto m-3">
+    <div class="row">
+          <!-- Grid column -->
+          <div class="col-lg-7 col-xl-8 mx-auto">
+
+              <!-- Post title -->
+              <h3 class="font-weight-bold mb-3"><strong><a class="text-dark" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></strong></h3>
+              <!-- Excerpt -->
+              <p class="dark-grey-text">{{ post.content|slice:"0:250"}}...</p>
+              <!-- Post data -->
+              <p>by <a class="font-weight-bold" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>, {{ post.date_posted|date:"F d, Y" }}</p>
+              <!-- Read more button -->
+              <a class="btn btn-light btn-md teal accent-3" href="{% url 'post-detail' post.id%}">Read More</a>
+
+              <hr/>
+          </div>
+    </div>  
+        <!-- <div class="card col-md-10 mx-auto m-3">
             <div class="card-body">
                 <img class="mr-2" src="{{ post.author.profile.image.url }}" style="width: 65px; height: 65px; float: left;">
                 <h2><a class="card-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h2>
@@ -18,7 +34,7 @@
               <hr/>
               <p class="lead">{{ post.content }}</p>
             </div>
-          </div>
+          </div> -->
     {% endfor %}
     <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2" role="group" aria-label="First group">
