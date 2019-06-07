@@ -16,6 +16,12 @@
                 
               </div>
               <hr/>
+              <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
+                  <img class="img-fluid mx-auto" src="{{ object.image.url }}" alt="Sample image">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+              </div>
               <p class="lead">{{ object.content }}</p>
               <div class="row">
                 {% if object.author == user %}
