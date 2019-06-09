@@ -3,11 +3,14 @@
 
 {% block content %}
     <div class="row">
-        <div class="container mt-5 pt-5 col-md-6">
-            <h2>Login to share your 'code' thoughts!</h2>
+        <div class="container mt-5 pt-5 col-md-6 animated fadeIn">
+            <h2>Login to share your 'geeky' thoughts!</h2>
             <hr>
+            <br><br>
+            <p class="lead text-center"><i class="fas fa-quote-left text-dark mr-2"></i>Create posts, share it with your pals, let them share their 
+                thoughts too!. Let this place be a collection of some awesome memories and interesting experiences!... <br>Have Fun!<i class="fas fa-quote-right text-dark ml-2"></i></p>
         </div>
-        <div class="jumbotron mt-5 col-md-6">
+        <div class="jumbotron mt-5 col-md-6 animated fadeIn">
             <form method="POST">
                 {% csrf_token %}
                 <fieldset class="form-group">
