@@ -7,13 +7,29 @@
       <hr/>
     </div>
     {%  for post in posts %}
-    <div class="row">
+    <div class="row animated fadeInUp">
           <!-- Grid column -->
-          <div class="col-lg-7 col-xl-8 mx-auto">
+          <div class="col-lg-5 col-xl-4">
+
+            <!-- Featured image -->
+            <div class="view overlay rounded z-depth-1-half mb-lg-5 mb-4">
+              <img class="img-fluid" src="{{ post.image.url }}" alt="Sample image">
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+      
+          </div>
+          <br><br>
+          <!-- Grid column -->
+          <div class="col-lg-7 col-xl-8">
 
               <!-- Post title -->
               <h3 class="font-weight-bold mb-3"><strong><a class="text-dark" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></strong></h3>
               <!-- Excerpt -->
+              
+                <!-- <img src="{{ post.image.url }}" alt="Image" width="400px" height="300px"/> -->
+               
               <p class="dark-grey-text">{{ post.content|slice:"0:250"}}...</p>
               <!-- Post data -->
               <p>by <a class="font-weight-bold" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>, {{ post.date_posted|date:"F d, Y" }}</p>
@@ -22,6 +38,7 @@
 
               <hr/>
           </div>
+          
     </div>  
         <!-- <div class="card col-md-10 mx-auto m-3">
             <div class="card-body">

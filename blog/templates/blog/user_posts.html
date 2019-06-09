@@ -7,7 +7,7 @@
       <hr/>
     </div>
     {%  for post in posts %}
-        <div class="card col-md-10 mx-auto m-3">
+        <!-- <div class="card col-md-10 mx-auto m-3">
             <div class="card-body">
                 <h2><a class="card-title" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></h2>
               <div>
@@ -17,7 +17,73 @@
               <hr/>
               <p class="lead">{{ post.content }}</p>
             </div>
-          </div>
+          </div> -->
+          <div class="card mt-3 mb-3 col-md-10 mx-auto m-3 animated fadeIn">
+                
+            <div class="card-body">
+              <img class="mr-2" src="{{ post.author.profile.image.url }}" style="width: 65px; height: 65px; float: left;">
+            
+              <h2>{{ post.title }}</h2>
+              <div>
+                <a class="mr-2" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
+                <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                
+              </div>
+              <hr/>
+              
+              <!-- <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4">
+                  <img class="img-fluid mx-auto" src="{{ object.image.url }}" alt="Sample image">
+                  <a>
+                    <div class="mask rgba-white-slight"></div>
+                  </a>
+              </div>
+              <br>
+              <p class="dark-text">{{ object.content }}</p> -->
+
+
+              <div class="row">
+                  <!-- Grid column -->
+                  <div class="col-lg-5 col-xl-4">
+        
+                    <!-- Featured image -->
+                    <div class="view overlay rounded z-depth-1-half mb-lg-5 mb-4">
+                      <img class="img-fluid" src="{{ post.image.url }}" alt="Sample image">
+                      <a>
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                    </div>
+              
+                  </div>
+                  <br><br>
+                  <!-- Grid column -->
+                  <div class="col-lg-7 col-xl-8">
+        
+                      <!-- Post title -->
+                      <!-- <h3 class="font-weight-bold mb-3"><strong><a class="text-dark" href="{% url 'post-detail' post.id%}">{{ post.title }}</a></strong></h3>
+                      Excerpt -->
+                      
+                        <!-- <img src="{{ post.image.url }}" alt="Image" width="400px" height="300px"/> -->
+                       
+                      <p class="dark-grey-text"><i class="fas fa-quote-left text-dark mr-2"></i>{{ post.content }}<i class="fas fa-quote-right text-dark ml-2"></i></p>
+                      <!-- Post data -->
+                     
+                      <hr/>
+                  </div>
+                  
+            </div> 
+
+
+              
+              
+              <div class="container text-center">
+                {% if post.author == user %}
+                    <a href="{% url 'post-update' post.id %}" class="btn btn-dark btn-sm"><i class="fas fa-edit"></i></a>
+                    <a href="{% url 'post-delete' post.id %}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                   
+                {% endif%}
+              </div>
+            </div>
+        </div>
     {% endfor %}
     <div class="btn-toolbar justify-content-center" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group mr-2" role="group" aria-label="First group">

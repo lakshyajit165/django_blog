@@ -17,8 +17,8 @@
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet"> 
 
-        
-
+       <!--Animate CSS--> 
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css" rel="stylesheet">
         <!-- <link href="{% static 'blog/main.css' %}" rel="stylesheet"> -->
         
         {% if title %}
@@ -88,7 +88,7 @@
 
           <!--Footer-->
           <!-- Footer -->
-<footer class="page-footer font-small mdb-color darken-4 ">
+<footer class="page-footer font-small mdb-color darken-4 " style="position: relative; bottom: 0">
 
     <div class="teal accent-3 text-dark">
       <div class="container">
@@ -118,8 +118,8 @@
             <a class="li-ic text-dark" href="https://www.linkedin.com/in/lakshyajit/" target="_blank">
               <i class="fab fa-linkedin-in mr-4"> </i>
             </a>
-            <!--Instagram-->
-           
+
+            
   
           </div>
           <!-- Grid column -->
@@ -131,96 +131,13 @@
     </div>
   
     <!-- Footer Links -->
-    <div class="container text-md-left mt-5">
-  
-      <!-- Grid row -->
-      <div class="row mt-3 white-text">
-  
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
-  
-          <!-- Content -->
-          <h6 class="text-uppercase font-weight-bold">Company name</h6>
-          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p class="lead">Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-            consectetur
-            adipisicing elit.</p>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-  
-          <!-- Links -->
-          <h6 class="text-uppercase font-weight-bold">Products</h6>
-          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p class="lead">
-            <a class="white-text" href="#!">MDBootstrap</a>
-          </p>
-          <p class="lead">
-            <a class="white-text" href="#!">MDWordPress</a>
-          </p>
-          <p class="lead">
-            <a class="white-text" href="#!">BrandFlow</a>
-          </p>
-          <p class="lead">
-            <a class="white-text" href="#!">Bootstrap Angular</a>
-          </p>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-  
-          <!-- Links -->
-          <h6 class="text-uppercase font-weight-bold">Useful links</h6>
-          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p class="lead">
-            <a class="white-text" href="#!">Your Account</a>
-          </p>
-          <p class="lead">
-            <a class="white-text" href="#!">Become an Affiliate</a>
-          </p>
-          <p class="lead">
-            <a class="white-text" href="#!">Shipping Rates</a>
-          </p>
-          <p class="lead">
-            <a class="white-text" href="#!">Help</a>
-          </p>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-  
-          <!-- Links -->
-          <h6 class="text-uppercase font-weight-bold">Contact</h6>
-          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p class="lead">
-            <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-          <p class="lead">
-            <i class="fas fa-envelope mr-3"></i> info@example.com</p>
-          <p class="lead">
-            <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-          <p class="lead">
-            <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-  
-        </div>
-        <!-- Grid column -->
-  
-      </div>
-      <!-- Grid row -->
-  
-    </div>
+    
     <!-- Footer Links -->
   
     <!-- Copyright -->
     
-    <div class="footer-copyright text-center text-black-50 py-3">© 2018 Copyright:
-      <a class="dark-grey-text" href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    <div class="footer-copyright text-center text-white py-3 lead">© 2019 Copyright | 
+      <a class="text-white lead" href="https://mdbootstrap.com/education/bootstrap/"> Made with <span class="text-danger lead">&hearts; </span>by Elkay</a>
     </div>
     <!-- Copyright -->
   
@@ -235,5 +152,19 @@
 <!-- Bootstrap core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script></body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
+
+    <script>
+      $('#exampleModal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      var recipient = button.data('whatever') // Extract info from data-* attributes
+      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other
+
+      var modal = $(this)
+      //modal.find('.modal-title').text('New message to ' + recipient)
+      modal.find('.modal-body input').val(recipient)
+      });
+    </script>
+</body>
 </html>
